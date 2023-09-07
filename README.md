@@ -1,32 +1,23 @@
-<!-- 
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# lsp_client
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages). 
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages). 
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+*A Dart client for communicating with the Dart analysis server using the Language Server Protocol (LSP).*
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+Dart's [analysis_server](https://github.com/dart-lang/sdk/tree/main/pkg/analysis_server) provides on-going static analysis results for a code base as the code changes.
+
+This package provides:
+
+- Dart classes for the Requests, Responses, Notifications and Errors described in the LSP spec
+- Serialisation for sending Requests and receiving Responses over the wire as JSONRPC2 Objects
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
+A Dart package that using the [lsp_client] must run the analysis server in a separate process and connect stdin/stdout...
 
 ```dart
 const like = 'sample';
@@ -34,6 +25,8 @@ const like = 'sample';
 
 ## Additional information
 
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
+Language Server Protocol support is documented in [tool/lsp_spec/README.md](https://github.com/dart-lang/sdk/blob/main/pkg/analysis_server/tool/lsp_spec/README.md)
+
+- See the [Official page for Language Server Protocol](https://microsoft.github.io/language-server-protocol/)
+
+[JSON-RPC 2.0 Specification](https://www.jsonrpc.org/specification)

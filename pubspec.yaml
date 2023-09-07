@@ -1,15 +1,16 @@
 name: lsp_client
-description: 
+description: A Dart client for communicating with the Dart analysis server using the Language Server Protocol (LSP).
 version: 0.0.0-a1
 publish_to: none
-# repository: https://github.com/my_org/my_repo
+repository: https://github.com/enspyrco/lsp_client
 
 environment:
   sdk: ^3.0.0
 
-# Add regular dependencies here.
-# dependencies:
-  # path: ^1.8.0
+dependencies:
+  stream_channel: ^2.1.1
+  lsp_models:
+    git: https://github.com/enspyrco/lsp_models.git
 
 dev_dependencies:
   lints: ^2.0.0

@@ -1,8 +1,4 @@
-/// Support for doing something awesome.
-///
-/// More dartdocs go here.
+/// A client for communicating with the Dart analysis server.
 library;
 
-export 'src/lsp_client_base.dart';
-
-// TODO: Export any libraries intended for clients of this package.
+export 'src/analysis_server_client.dart';
