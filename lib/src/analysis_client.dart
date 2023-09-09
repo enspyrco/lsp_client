@@ -2,13 +2,16 @@ import 'dart:convert';
 
 import 'package:stream_channel/stream_channel.dart';
 
-/// The [AnalysisServerClient] wraps a [StreamChannel] that is assumed to be a
+import 'lsp_packet_transformer.dart';
+
+/// The [AnalysisClient] wraps a [StreamChannel] that is assumed to be a
 /// directly streaming bytes to & from an analysis_server process, where each
 /// message has been encoded according to the LSP spec, see: https://microsoft.github.io/language-server-protocol/specifications/lsp/3.17/specification/#baseProtocol
-class AnalysisServerClient {
-  AnalysisServerClient(this._serverChannel);
+class AnalysisClient {
+  AnalysisClient(this._serverChannel);
 
   final StreamChannel<List<int>> _serverChannel;
+  final buffer = <int>[];
 
   void initializeServer() {}
 
@@ -35,12 +38,8 @@ class AnalysisServerClient {
     _serverChannel.sink.add(utf8EncodedBody);
   }
 
-  // currently assumes each event will be a full message which
-  // apparently is not the case but I want to see it for myself
-  Stream<Map<String, Object?>> transformedServerOutput() =>
-      _serverChannel.stream.map((List<int> data) {
-        String message = utf8.decode(data);
-
-        return jsonDecode(message.split('\r\n\r\n').last);
-      });
+  //
+  Stream<Map<String, Object?>> get onJsonFromServer => _serverChannel.stream
+      .transform(LspPacketTransformer())
+      .map((event) => jsonDecode(event));
 }

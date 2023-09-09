@@ -13,7 +13,19 @@ This package provides:
 
 ## Getting started
 
+```dart
+final AnalysisServer server; = AnalysisServer(
+  config: AnalysisServerConfig(
+    clientId: 'mycompany.com',
+    clientVersion: '0.0.1',
+    logFile: 'analysis_server_utils.log',
+    sdkPath: '<path_to_flutter>/bin/cache/dart-sdk',
+  ),
+);
 
+final AnalysisClient client =
+  AnalysisClient(server.streamChannel);
+```
 
 ## Usage
 

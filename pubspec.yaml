@@ -9,8 +9,9 @@ environment:
 
 dependencies:
   stream_channel: ^2.1.1
+  collection: ^1.18.0
   lsp_models:
-    git: https://github.com/enspyrco/lsp_models.git
+    git: https://github.com/enspyrco/lsp_models
 
 dev_dependencies:
   lints: ^2.0.0
