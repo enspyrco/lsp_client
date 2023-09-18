@@ -2,4 +2,11 @@
 library;
 
 export 'src/analysis_client.dart';
-export 'package:lsp_models/lsp_models.dart' show AnalysisProcess;
+export 'package:lsp_models/lsp_models.dart'
+    show
+        AnalysisProcess,
+        InitializeParams,
+        ClientCapabilities,
+        TraceValues,
+        WorkspaceFolder,
+        InitializeParamsClientInfo;
