@@ -14,5 +14,6 @@ dependencies:
     git: https://github.com/enspyrco/lsp_models
 
 dev_dependencies:
-  lints: ^2.0.0
+  enspyr_lints:
+    git: https://github.com/enspyrco/enspyr_lints
   test: ^1.21.0

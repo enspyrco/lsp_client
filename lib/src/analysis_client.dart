@@ -41,5 +41,5 @@ class AnalysisClient {
   //
   Stream<Map<String, Object?>> get onJsonFromServer => _serverChannel.stream
       .transform(LspPacketTransformer())
-      .map((event) => jsonDecode(event));
+      .map((event) => jsonDecode(event) as Map<String, Object?>);
 }
