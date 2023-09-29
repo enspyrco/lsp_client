@@ -1,0 +1,4 @@
+dependency_overrides:
+# where are we? dart/api-clients/<here>
+  lsp_models:
+    path: ../../utils/lsp_models
