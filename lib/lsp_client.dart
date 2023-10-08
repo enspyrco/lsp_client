@@ -6,7 +6,9 @@ export 'package:lsp_models/lsp_models.dart'
     show
         AnalysisProcess,
         InitializeParams,
+        SemanticTokensParams,
         ClientCapabilities,
+        TextDocumentIdentifier,
         TraceValues,
         WorkspaceFolder,
         InitializeParamsClientInfo;
